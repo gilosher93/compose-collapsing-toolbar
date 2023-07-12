@@ -45,12 +45,16 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.github.gilosher93"
-            artifactId = "collpsing-toolbar"
-            version = "1.0"
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.gilosher93"
+                artifactId = "collpsing-toolbar"
+                version = "1.0"
+
+                from(components["release"])
+            }
         }
     }
 }
