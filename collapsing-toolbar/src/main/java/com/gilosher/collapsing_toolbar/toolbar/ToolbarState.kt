@@ -1,13 +1,13 @@
-package com.example.collapsingtoolbarapp.toolbar
+package com.gilosher.collapsing_toolbar.toolbar
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.geometry.Offset
-import com.example.collapsingtoolbarapp.toolbar.scrollflags.EnterAlwaysCollapsedState
-import com.example.collapsingtoolbarapp.toolbar.scrollflags.EnterAlwaysState
-import com.example.collapsingtoolbarapp.toolbar.scrollflags.ExitUntilCollapsedState
-import com.example.collapsingtoolbarapp.toolbar.scrollflags.ScrollState
+import com.gilosher.collapsing_toolbar.toolbar.scrollflags.EnterAlwaysCollapsedState
+import com.gilosher.collapsing_toolbar.toolbar.scrollflags.EnterAlwaysState
+import com.gilosher.collapsing_toolbar.toolbar.scrollflags.ExitUntilCollapsedState
+import com.gilosher.collapsing_toolbar.toolbar.scrollflags.ScrollState
 
 @Stable
 interface ToolbarState {

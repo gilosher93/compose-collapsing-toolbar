@@ -1,4 +1,4 @@
-package com.example.collapsingtoolbarapp.toolbar
+package com.gilosher.collapsing_toolbar.toolbar
 
 import androidx.compose.ui.geometry.Offset
 

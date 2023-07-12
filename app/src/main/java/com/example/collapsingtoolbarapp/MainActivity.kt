@@ -19,6 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.collapsingtoolbarapp.ui.theme.CollapsingToolbarAppTheme
+import com.gilosher.collapsing_toolbar.CollapsingToolbarLayout
 
 private val MinToolbarHeight = 0.dp
 private val MaxToolbarHeight = 200.dp

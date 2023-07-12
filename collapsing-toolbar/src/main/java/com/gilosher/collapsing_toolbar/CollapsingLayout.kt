@@ -1,4 +1,4 @@
-package com.example.collapsingtoolbarapp
+package com.gilosher.collapsing_toolbar
 
 import androidx.compose.animation.core.FloatExponentialDecaySpec
 import androidx.compose.animation.core.animateDecay
@@ -25,8 +25,8 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.Velocity
-import com.example.collapsingtoolbarapp.toolbar.ToolbarState
-import com.example.collapsingtoolbarapp.toolbar.rememberToolbarScrollState
+import com.gilosher.collapsing_toolbar.toolbar.ToolbarState
+import com.gilosher.collapsing_toolbar.toolbar.rememberToolbarScrollState
 import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.launch
 

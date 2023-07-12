@@ -1,35 +1,31 @@
-package com.example.collapsingtoolbarapp.toolbar.scrollflags
+package com.gilosher.collapsing_toolbar.toolbar.scrollflags
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.mapSaver
 import androidx.compose.runtime.setValue
-import com.example.collapsingtoolbarapp.toolbar.ScrollFlagState
+import androidx.compose.runtime.structuralEqualityPolicy
+import com.gilosher.collapsing_toolbar.toolbar.FixedScrollFlagState
 
-class ScrollState(
+class ExitUntilCollapsedState(
     heightRange: IntRange,
     scrollOffset: Float = 0f
-) : ScrollFlagState(heightRange) {
+) : FixedScrollFlagState(heightRange) {
 
-    override var _scrollOffset by mutableStateOf(scrollOffset.coerceIn(0f, maxHeight.toFloat()))
-
-    override val offset: Float
-        get() = -(scrollOffset - rangeDifference).coerceIn(0f, minHeight.toFloat())
+    override var _scrollOffset by mutableStateOf(
+        value = scrollOffset.coerceIn(0f, rangeDifference.toFloat()),
+        policy = structuralEqualityPolicy()
+    )
 
     override var scrollOffset: Float
         get() = _scrollOffset
         set(value) {
             if (scrollTopLimitReached) {
                 val oldOffset = _scrollOffset
-                Log.d("GIL_TEST", "oldOffset: $oldOffset")
-                _scrollOffset = value.coerceIn(0f, maxHeight.toFloat())
-                Log.d("GIL_TEST", "_scrollOffset: $_scrollOffset")
+                _scrollOffset = value.coerceIn(0f, rangeDifference.toFloat())
                 _consumed = oldOffset - _scrollOffset
-                Log.d("GIL_TEST", "_consumed: $_consumed")
             } else {
                 _consumed = 0f
-                Log.d("GIL_TEST", "_consumed: $_consumed")
             }
         }
 
@@ -49,7 +45,7 @@ class ScrollState(
                     )
                 },
                 restore = {
-                    ScrollState(
+                    ExitUntilCollapsedState(
                         heightRange = (it[minHeightKey] as Int)..(it[maxHeightKey] as Int),
                         scrollOffset = it[scrollOffsetKey] as Float,
                     )

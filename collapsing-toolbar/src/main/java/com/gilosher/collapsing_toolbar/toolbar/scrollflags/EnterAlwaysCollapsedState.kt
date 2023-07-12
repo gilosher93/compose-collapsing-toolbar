@@ -1,11 +1,11 @@
-package com.example.collapsingtoolbarapp.toolbar.scrollflags
+package com.gilosher.collapsing_toolbar.toolbar.scrollflags
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.mapSaver
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.structuralEqualityPolicy
-import com.example.collapsingtoolbarapp.toolbar.ScrollFlagState
+import com.gilosher.collapsing_toolbar.toolbar.ScrollFlagState
 
 class EnterAlwaysCollapsedState(
     heightRange: IntRange,

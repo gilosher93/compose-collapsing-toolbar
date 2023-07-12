@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CollapsingToolbarApp"
 include(":app")
- 
+include(":collapsing-toolbar")
